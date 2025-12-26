@@ -1,0 +1,16 @@
+# Executáveis
+*.exe
+*.o
+*.a
+
+# Arquivos de dados
+componentes.csv
+
+# IDE
+.vscode/
+*.dev
+*.layout
+
+# Compilação
+*.out
+main
