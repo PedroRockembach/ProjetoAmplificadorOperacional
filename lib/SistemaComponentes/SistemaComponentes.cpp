@@ -2,6 +2,9 @@
 #include "../AmplificadorInversor/AmplificadorInversor.h"
 #include "../AmplificadorNaoInversor/AmplificadorNaoInversor.h"
 #include "../AmplificadorDiferencial/AmplificadorDiferencial.h"
+#include "../Display7s/Display7.h"
+#include "../DisplayLCD/DisplayLCD.h"
+#include "../DisplayOLED/DisplayOLED.h"
 
 SistemaComponentes::SistemaComponentes() : gerenciador("componentes.csv") {
     // Construtor
@@ -35,6 +38,18 @@ void SistemaComponentes::exibirMenuAmplificadores() {
     cout << "1. Amplificador INVERSOR\n";
     cout << "2. Amplificador NÃO-INVERSOR\n";
     cout << "3. Amplificador DIFERENCIAL\n";
+    cout << "0. Voltar\n";
+    cout << "──────────────────────────────────────\n";
+    cout << "Opcao: ";
+}
+
+void SistemaComponentes::exibirMenuDisplays() {
+    cout << "\n╔══════════════════════════════════════╗\n";
+    cout << "║           DISPLAYS                   ║\n";
+    cout << "╚══════════════════════════════════════╝\n";
+    cout << "1. Display de SETE SEGMENTOS\n";
+    cout << "2. Display LCD\n";
+    cout << "3. Display OLED\n";
     cout << "0. Voltar\n";
     cout << "──────────────────────────────────────\n";
     cout << "Opcao: ";
@@ -90,6 +105,52 @@ void SistemaComponentes::menuAmplificadores() {
                 if (!resultado.codigo.empty()) {
                     gerenciador.adicionar(resultado);
                     cout << "\n[SUCESSO] Amplificador Diferencial cadastrado!\n";
+                }
+                break;
+            }
+            case 0: break;
+            default: cout << "[ERRO] Opcao invalida.\n";
+        }
+        
+    } while (opcao != 0);
+}
+
+void SistemaComponentes::menuDisplays() {
+    int opcao;
+    
+    do {
+        exibirMenuDisplays();
+        cin >> opcao;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        
+        dadosCSV resultado;
+        resultado.codigo = "";
+        
+        switch(opcao) {
+            case 1: {
+                Display7 display;
+                resultado = display.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Display de Sete Segmentos cadastrado!\n";
+                }
+                break;
+            }
+            case 2: {
+                DisplayLCD display;
+                resultado = display.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Display LCD cadastrado!\n";
+                }
+                break;
+            }
+            case 3: {
+                DisplayOLED display;
+                resultado = display.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Display OLED cadastrado!\n";
                 }
                 break;
             }
@@ -255,7 +316,7 @@ void SistemaComponentes::executar() {
                 break;
             }
             case 4: {
-                cout << "[INFO] Displays ainda não implementados.\n";
+                menuDisplays();
                 break;
             }
             case 5: {

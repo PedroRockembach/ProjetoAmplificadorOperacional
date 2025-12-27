@@ -14,9 +14,11 @@ class SistemaComponentes {
         ExibidorComponente exibidor;
         
         void menuAmplificadores();
+        void menuDisplays();
         void menuCRUD();
         void exibirMenuPrincipal();
         void exibirMenuAmplificadores();
+        void exibirMenuDisplays();
         void exibirMenuCRUD();
         
     public:
