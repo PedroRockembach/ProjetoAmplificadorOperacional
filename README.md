@@ -63,6 +63,9 @@ Formato: `Codigo,Tipo,Modelo,Valor,BandaPassante,ImpedanciaEntrada,TensaoOffset`
 -  [Tipo de componente]
 -  [Tipo de componente]
 
+
+## .\main.exe pra rodar
+## ctrl+shift+b pra compilar
 ---
 
 **Última atualização:** 26 de dezembro de 2025
