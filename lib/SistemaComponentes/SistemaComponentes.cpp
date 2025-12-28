@@ -8,6 +8,9 @@
 #include "../CapacitorCeramico/Ceramico.h"
 #include "../CapacitorEletrolitico/Eletrolitico.h"
 #include "../CapacitorTantalum/Tantalum.h"
+#include "../IndutorFerrite/IndutorFerrite.h"
+#include "../IndutorToroidal/IndutorToroidal.h"
+#include "../IndutorBobinaAr/IndutorBobinaAr.h"
 
 SistemaComponentes::SistemaComponentes() : gerenciador("componentes.csv") {
     // Construtor
@@ -65,6 +68,18 @@ void SistemaComponentes::exibirMenuCapacitores() {
     cout << "1. Capacitor CERAMICO\n";
     cout << "2. Capacitor ELETROLITICO\n";
     cout << "3. Capacitor de TANTALUM\n";
+    cout << "0. Voltar\n";
+    cout << "──────────────────────────────────────\n";
+    cout << "Opcao: ";
+}
+
+void SistemaComponentes::exibirMenuIndutores() {
+    cout << "\n╔══════════════════════════════════════╗\n";
+    cout << "║           INDUTORES                 ║\n";
+    cout << "╚══════════════════════════════════════╝\n";
+    cout << "1. Indutor FERRITE\n";
+    cout << "2. Indutor TOROIDAL\n";
+    cout << "3. Indutor BOBINA AR\n";
     cout << "0. Voltar\n";
     cout << "──────────────────────────────────────\n";
     cout << "Opcao: ";
@@ -212,6 +227,52 @@ void SistemaComponentes::menuCapacitores() {
                 if (!resultado.codigo.empty()) {
                     gerenciador.adicionar(resultado);
                     cout << "\n[SUCESSO] Capacitor de Tantalum cadastrado!\n";
+                }
+                break;
+            }
+            case 0: break;
+            default: cout << "[ERRO] Opcao invalida.\n";
+        }
+        
+    } while (opcao != 0);
+}
+
+void SistemaComponentes::menuIndutores() {
+    int opcao;
+    
+    do {
+        exibirMenuIndutores();
+        cin >> opcao;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        
+        dadosCSV resultado;
+        resultado.codigo = "";
+        
+        switch(opcao) {
+            case 1: {
+                IndutorFerrite ind;
+                resultado = ind.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Indutor Ferrite cadastrado!\n";
+                }
+                break;
+            }
+            case 2: {
+                IndutorToroidal ind;
+                resultado = ind.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Indutor Toroidal cadastrado!\n";
+                }
+                break;
+            }
+            case 3: {
+                IndutorBobinaAr ind;
+                resultado = ind.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Indutor Bobina Ar cadastrado!\n";
                 }
                 break;
             }
@@ -373,7 +434,7 @@ void SistemaComponentes::executar() {
                 break;
             }
             case 3: {
-                cout << "[INFO] Indutores ainda não implementados.\n";
+                menuIndutores();
                 break;
             }
             case 4: {
