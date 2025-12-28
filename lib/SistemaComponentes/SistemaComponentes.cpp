@@ -5,6 +5,9 @@
 #include "../Display7s/Display7.h"
 #include "../DisplayLCD/DisplayLCD.h"
 #include "../DisplayOLED/DisplayOLED.h"
+#include "../CapacitorCeramico/Ceramico.h"
+#include "../CapacitorEletrolitico/Eletrolitico.h"
+#include "../CapacitorTantalum/Tantalum.h"
 
 SistemaComponentes::SistemaComponentes() : gerenciador("componentes.csv") {
     // Construtor
@@ -50,6 +53,18 @@ void SistemaComponentes::exibirMenuDisplays() {
     cout << "1. Display de SETE SEGMENTOS\n";
     cout << "2. Display LCD\n";
     cout << "3. Display OLED\n";
+    cout << "0. Voltar\n";
+    cout << "──────────────────────────────────────\n";
+    cout << "Opcao: ";
+}
+
+void SistemaComponentes::exibirMenuCapacitores() {
+    cout << "\n╔══════════════════════════════════════╗\n";
+    cout << "║           CAPACITORES               ║\n";
+    cout << "╚══════════════════════════════════════╝\n";
+    cout << "1. Capacitor CERAMICO\n";
+    cout << "2. Capacitor ELETROLITICO\n";
+    cout << "3. Capacitor de TANTALUM\n";
     cout << "0. Voltar\n";
     cout << "──────────────────────────────────────\n";
     cout << "Opcao: ";
@@ -151,6 +166,52 @@ void SistemaComponentes::menuDisplays() {
                 if (!resultado.codigo.empty()) {
                     gerenciador.adicionar(resultado);
                     cout << "\n[SUCESSO] Display OLED cadastrado!\n";
+                }
+                break;
+            }
+            case 0: break;
+            default: cout << "[ERRO] Opcao invalida.\n";
+        }
+        
+    } while (opcao != 0);
+}
+
+void SistemaComponentes::menuCapacitores() {
+    int opcao;
+    
+    do {
+        exibirMenuCapacitores();
+        cin >> opcao;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        
+        dadosCSV resultado;
+        resultado.codigo = "";
+        
+        switch(opcao) {
+            case 1: {
+                Ceramico cap;
+                resultado = cap.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Capacitor Ceramico cadastrado!\n";
+                }
+                break;
+            }
+            case 2: {
+                Eletrolitico cap;
+                resultado = cap.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Capacitor Eletrolitico cadastrado!\n";
+                }
+                break;
+            }
+            case 3: {
+                Tantalum cap;
+                resultado = cap.Cadastrar();
+                if (!resultado.codigo.empty()) {
+                    gerenciador.adicionar(resultado);
+                    cout << "\n[SUCESSO] Capacitor de Tantalum cadastrado!\n";
                 }
                 break;
             }
@@ -308,7 +369,7 @@ void SistemaComponentes::executar() {
                 break;
             }
             case 2: {
-                cout << "[INFO] Capacitores ainda não implementados.\n";
+                menuCapacitores();
                 break;
             }
             case 3: {

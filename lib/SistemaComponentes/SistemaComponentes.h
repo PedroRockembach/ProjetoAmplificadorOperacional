@@ -15,10 +15,12 @@ class SistemaComponentes {
         
         void menuAmplificadores();
         void menuDisplays();
+        void menuCapacitores();
         void menuCRUD();
         void exibirMenuPrincipal();
         void exibirMenuAmplificadores();
         void exibirMenuDisplays();
+        void exibirMenuCapacitores();
         void exibirMenuCRUD();
         
     public:
