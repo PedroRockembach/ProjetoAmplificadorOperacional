@@ -19,22 +19,52 @@ lib/
 ├── ExibidorComponente/              # Exibição de dados
 ├── GerenciadorComponentes/          # Gerenciamento CRUD + CSV
 └── Validador/                       # Validação de entrada
+├───Capacitor
+├───CapacitorCeramico
+├───CapacitorEletrolitico
+├───CapacitorTantalum
+├───Display
+├───Display7s
+├───DisplayLCD
+├───DisplayOLED
+├───Indutor
+├───IndutorBobinaAr
+├───IndutorEntrada
+├───IndutorFerrite
+├───IndutorToroidal
+├───SistemaComponentes
+├───UnidadeIndutancia
 ```
 
 ## 🔧 Compilação
 
 ```bash
 cd ProjetoAmplificadorOperacional
-g++ -fdiagnostics-color=always -g main.cpp \
-    lib/AmplificadorOperacional/AmplificadorOperacional.cpp \
-    lib/AmplificadorInversor/AmplificadorInversor.cpp \
-    lib/AmplificadorNaoInversor/AmplificadorNaoInversor.cpp \
-    lib/AmplificadorDiferencial/AmplificadorDiferencial.cpp \
-    lib/ExibidorComponente/ExibidorComponente.cpp \
-    lib/GerenciadorComponentes/GerenciadorComponentes.cpp \
-    lib/Validador/Validador.cpp \
-    -o main.exe
-
+        "-fdiagnostics-color=always",
+        "-g",
+        "main.cpp",
+        "lib/AmplificadorOperacional/AmplificadorOperacional.cpp",
+        "lib/AmplificadorInversor/AmplificadorInversor.cpp",
+        "lib/AmplificadorNaoInversor/AmplificadorNaoInversor.cpp",
+        "lib/AmplificadorDiferencial/AmplificadorDiferencial.cpp",
+        "lib/ExibidorComponente/ExibidorComponente.cpp",
+        "lib/GerenciadorComponentes/GerenciadorComponentes.cpp",
+        "lib/SistemaComponentes/SistemaComponentes.cpp",
+        "lib/Validador/Validador.cpp",
+        "lib/Display/Display.cpp",
+        "lib/Display7s/Display7.cpp",
+        "lib/DisplayLCD/DisplayLCD.cpp",
+        "lib/DisplayOLED/DisplayOLED.cpp",
+        "lib/CapacitorCeramico/ceramico.cpp",
+        "lib/CapacitorEletrolitico/eletrolitico.cpp",
+        "lib/CapacitorTantalum/tantalum.cpp",
+        "lib/Indutor/Indutor.cpp",
+        "lib/IndutorEntrada/Entrada.cpp",
+        "lib/UnidadeIndutancia/UnidadeIndutancia.cpp",
+        "lib/IndutorFerrite/IndutorFerrite.cpp",
+        "lib/IndutorBobinaAr/IndutorBobinaAr.cpp",
+        "lib/IndutorToroidal/IndutorToroidal.cpp",
+        "-o",
 ./main.exe
 ```
 
@@ -57,11 +87,9 @@ Formato: `Codigo,Tipo,Modelo,Valor,BandaPassante,ImpedanciaEntrada,TensaoOffset`
 - Pedro e Matheus - Amplificadores Operacionais
 ## Componentes já implementados
 
--  [Tipo de componente]
--  [Tipo de componente]
--  [Tipo de componente]
--  [Tipo de componente]
--  [Tipo de componente]
+-  [Indutores]
+-  [Capacitores]
+-  [Displays]
 
 
 ## .\main.exe pra rodar
