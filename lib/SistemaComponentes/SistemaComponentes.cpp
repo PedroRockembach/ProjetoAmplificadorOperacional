@@ -21,11 +21,11 @@ SistemaComponentes::~SistemaComponentes() {
 }
 
 void SistemaComponentes::exibirMenuPrincipal() {
-    cout << "\n╔════════════════════════════════════════╗\n";
-    cout << "║  SISTEMA DE GERENCIAMENTO DE COMPONENTES ║\n";
-    cout << "╚════════════════════════════════════════╝\n";
+    cout << "\n=======================================\n";
+    cout << "SISTEMA DE GERENCIAMENTO DE COMPONENTES\n";
+    cout << "=======================================\n";
     cout << "Componentes cadastrados: " << gerenciador.obterTamanho() << "\n";
-    cout << "──────────────────────────────────────────\n";
+    cout << "=======================================\n";
     cout << "1. AMPLIFICADORES OPERACIONAIS\n";
     cout << "2. CAPACITORES\n";
     cout << "3. INDUTORES\n";
@@ -33,50 +33,50 @@ void SistemaComponentes::exibirMenuPrincipal() {
     cout << "5. GERENCIAR COMPONENTES\n";
     cout << "6. Salvar e Sair\n";
     cout << "0. Sair sem Salvar\n";
-    cout << "──────────────────────────────────────────\n";
+    cout << "=======================================\n";
     cout << "Opcao: ";
 }
 
 void SistemaComponentes::exibirMenuAmplificadores() {
-    cout << "\n╔══════════════════════════════════════╗\n";
-    cout << "║      AMPLIFICADORES OPERACIONAIS     ║\n";
-    cout << "╚══════════════════════════════════════╝\n";
+    cout << "\n=======================================\n";
+    cout << "     AMPLIFICADORES OPERACIONAIS     \n";
+    cout << "=======================================\n";
     cout << "1. Amplificador INVERSOR\n";
     cout << "2. Amplificador NÃO-INVERSOR\n";
     cout << "3. Amplificador DIFERENCIAL\n";
     cout << "0. Voltar\n";
-    cout << "──────────────────────────────────────\n";
+    cout << "=======================================\n";
     cout << "Opcao: ";
 }
 
 void SistemaComponentes::exibirMenuDisplays() {
-    cout << "\n╔══════════════════════════════════════╗\n";
-    cout << "║           DISPLAYS                   ║\n";
-    cout << "╚══════════════════════════════════════╝\n";
+    cout << "\n=======================================\n";
+    cout << "           DISPLAYS                   \n";
+    cout << "=======================================\n";
     cout << "1. Display de SETE SEGMENTOS\n";
     cout << "2. Display LCD\n";
     cout << "3. Display OLED\n";
     cout << "0. Voltar\n";
-    cout << "──────────────────────────────────────\n";
+    cout << "=======================================\n";
     cout << "Opcao: ";
 }
 
 void SistemaComponentes::exibirMenuCapacitores() {
-    cout << "\n╔══════════════════════════════════════╗\n";
-    cout << "║           CAPACITORES               ║\n";
-    cout << "╚══════════════════════════════════════╝\n";
+    cout << "\n=======================================\n";
+    cout << "           CAPACITORES               \n";
+    cout << "=======================================\n";
     cout << "1. Capacitor CERAMICO\n";
     cout << "2. Capacitor ELETROLITICO\n";
     cout << "3. Capacitor de TANTALUM\n";
     cout << "0. Voltar\n";
-    cout << "──────────────────────────────────────\n";
+    cout << "=======================================\n";
     cout << "Opcao: ";
 }
 
 void SistemaComponentes::exibirMenuIndutores() {
-    cout << "\n╔══════════════════════════════════════╗\n";
-    cout << "║           INDUTORES                 ║\n";
-    cout << "╚══════════════════════════════════════╝\n";
+    cout << "\n=======================================\n";
+    cout << "           INDUTORES                 \n";
+    cout << "=======================================\n";
     cout << "1. Indutor FERRITE\n";
     cout << "2. Indutor TOROIDAL\n";
     cout << "3. Indutor BOBINA AR\n";
@@ -86,16 +86,16 @@ void SistemaComponentes::exibirMenuIndutores() {
 }
 
 void SistemaComponentes::exibirMenuCRUD() {
-    cout << "\n╔══════════════════════════════════════╗\n";
-    cout << "║     GERENCIAR COMPONENTES            ║\n";
-    cout << "╚══════════════════════════════════════╝\n";
+    cout << "\n=======================================\n";
+    cout << "     GERENCIAR COMPONENTES            \n";
+    cout << "=======================================\n";
     cout << "1. LISTAR / VISUALIZAR\n";
     cout << "2. EDITAR\n";
     cout << "3. REMOVER\n";
     cout << "4. BUSCAR por Tipo\n";
     cout << "5. BUSCAR por Código\n";
     cout << "0. Voltar\n";
-    cout << "──────────────────────────────────────\n";
+    cout << "=======================================\n";
     cout << "Opcao: ";
 }
 
