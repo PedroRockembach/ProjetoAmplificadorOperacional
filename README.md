@@ -103,4 +103,4 @@ Se os caracteres especiais (╔═╗║) não aparecerem corretamente:
 ## ctrl+shift+b pra compilar
 ---
 
-**Última atualização:** 26 de dezembro de 2025
+**Última atualização:** 07 de janeiro de 2026
