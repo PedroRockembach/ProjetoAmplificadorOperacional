@@ -6,11 +6,15 @@
 # Arquivos de dados
 componentes.csv
 
-# IDE
-.vscode/
+# IDEs
 *.dev
 *.layout
 
 # Compilação
 *.out
 main
+
+# VS Code - Permite que tasks.json seja rastreado
+.vscode/*
+!.vscode/tasks.json
+!.vscode/c_cpp_properties.json
