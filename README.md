@@ -82,6 +82,13 @@ Formato: `Codigo,Tipo,Modelo,Valor,BandaPassante,ImpedanciaEntrada,TensaoOffset`
 ✅ Persistência em CSV
 ✅ Validação de entrada
 
+## Nota sobre encoding
+
+Neste projeto, para a visualização do menu mais estilizada usamos a configuração *chcp 65001* como configuração interna, ao rodar, pode ser que os carateres especiais fornecidos pela mesma não funcionem por permissões relacionadas a Usuarios de windows(usuario padrao e administrador) ao ocorrer esse problema o menu fica como "òÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ"
+mas o programa funciona.
+Se os caracteres especiais (╔═╗║) não aparecerem corretamente:
+- Execute em Windows Terminal (recomendado) 
+- Ou abra CMD como Admin e execute main.exe
 ## 👨‍💼 Autores
 
 - Pedro e Matheus - Amplificadores Operacionais
